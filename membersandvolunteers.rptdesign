@@ -973,12 +973,7 @@
                     <text-property name="heading">sendEventNotices</text-property>
                 </structure>
             </list-property>
-            <list-property name="filter">
-                <structure>
-                    <property name="operator">is-true</property>
-                    <expression name="expr" type="javascript">row["isActive"]</expression>
-                </structure>
-            </list-property>
+            <list-property name="filter"/>
             <list-property name="parameters"/>
             <structure name="cachedMetaData">
                 <list-property name="resultSet">
@@ -1227,7 +1222,7 @@
                     <property name="nativeDataType">8</property>
                 </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[{ "selectedFields" : [ "address" , "email" , "joined" , "phone" , "city" , "state" , "mmb" , "isActive" , "validPostMail" , "validEmail" , "lastUpdated" , "paidThrough" , "postalCode" , "firstName" , "lastName" , "newsletterType" , "lists" , "unit" , "isNewMember" , "sendEventNotices"] , "sortExpr" : "{ \"lastName\":1}" , "collectionName" : "members"}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[{ "findQueryExpr" : "{ isActive:true}" , "selectedFields" : [ "address" , "email" , "joined" , "phone" , "city" , "state" , "mmb" , "isActive" , "validPostMail" , "validEmail" , "lastUpdated" , "paidThrough" , "postalCode" , "firstName" , "lastName" , "newsletterType" , "lists" , "unit" , "isNewMember" , "sendEventNotices"] , "sortExpr" : "{ \"lastName\":1,\"firstName\":1}" , "collectionName" : "members"}]]></xml-property>
             <structure name="designerState">
                 <property name="version">1.0</property>
                 <property name="stateContentAsString">false,1000</property>

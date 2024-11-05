@@ -13,9 +13,14 @@ const toNameTitleCase = ( name) => {
             newName = `${newName}${pad}${sModified}`;
         } else if(s.toLowerCase() === "and"){
             newName = `${newName}${pad}&`;
-        } else if (["OD","MD","JR"].includes(s)) {
+        } else if (["OD","MD"].includes(s)) {
             newName = `${newName}, ${s}`;
-        }else {
+        } else if (["JR"].includes(s)) {
+            newName = `${newName}, Jr.`;
+        } else if (s.charAt(0) === '(' && s.charAt(s.length-1) === ')') {
+            let parenName = toNameTitleCase(s.slice(1,-1));
+            newName = `${newName}${pad}(${parenName})`;
+        } else {
             newName = `${newName}${pad}${s.slice(0,1).toUpperCase()}${s.slice(1).toLowerCase()}`;
         }
         pad = " ";
