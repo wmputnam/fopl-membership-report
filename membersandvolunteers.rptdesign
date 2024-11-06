@@ -28,7 +28,7 @@
         <structure>
             <property name="name">findQueryExpr</property>
             <property name="id">60</property>
-            <expression name="value" type="javascript">dynamicQuery({listType:"all"});</expression>
+            <expression name="value" type="javascript">dynamicQuery({listType:this.params["listType"].value});</expression>
         </structure>
         <structure>
             <property name="name">sortExpr</property>
@@ -75,6 +75,50 @@
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="bidiLayoutOrientation">ltr</property>
     <property name="imageDPI">72</property>
+    <parameters>
+        <scalar-parameter name="listType" id="67">
+            <text-property name="promptText">Select the type of list to report</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">all</value>
+            </simple-property-list>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">all</property>
+                    <property name="label">All active members and volunteers</property>
+                </structure>
+                <structure>
+                    <property name="value">board</property>
+                    <property name="label">Board members</property>
+                </structure>
+                <structure>
+                    <property name="value">sale</property>
+                    <property name="label">Book sale volunteers</property>
+                </structure>
+                <structure>
+                    <property name="value">store</property>
+                    <property name="label">Store volunteers</property>
+                </structure>
+                <structure>
+                    <property name="value">lumacon</property>
+                    <property name="label">LUMACON volunteeers</property>
+                </structure>
+                <structure>
+                    <property name="value">new</property>
+                    <property name="label">New members</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">false</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
     <data-sources>
         <oda-data-source extensionID="org.eclipse.birt.data.oda.mongodb" name="Data Source" id="4">
             <list-property name="privateDriverProperties">
