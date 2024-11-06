@@ -90,3 +90,11 @@ const addressData = ( dataSetRow ) => {
 
 // #A0FBF9
 // #D5D5D5
+
+const dynamicQuery = ( o ) => {
+    let queryExpression = { isActive: true };
+    if(o.listType !== undefined && o.listType === "board"){
+        queryExpression["lists"]={"$regex":"board","$options":"i"}
+    }
+    return JSON.stringify( queryExpression );
+}

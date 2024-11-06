@@ -4,6 +4,73 @@
     <list-property name="includeScripts">
         <property>resources/custom.js</property>
     </list-property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">collectionName</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">operationType</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">operationExpr</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">selectedFields</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">findQueryExpr</property>
+            <property name="id">60</property>
+            <expression name="value" type="javascript">dynamicQuery({listType:"all"});</expression>
+        </structure>
+        <structure>
+            <property name="name">sortExpr</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">batchSize</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">rtMDSearchLimit</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">numSkipDocuments</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">indexHints</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">queryReadPreference</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">queryReadPreferenceTags</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">noTimeOut</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">allowsPartialResults</property>
+            <property name="id">60</property>
+        </structure>
+        <structure>
+            <property name="name">flattenCollections</property>
+            <property name="id">60</property>
+        </structure>
+    </list-property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="bidiLayoutOrientation">ltr</property>
@@ -1222,7 +1289,7 @@
                     <property name="nativeDataType">8</property>
                 </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[{ "findQueryExpr" : "{ isActive:true}" , "selectedFields" : [ "address" , "email" , "joined" , "phone" , "city" , "state" , "mmb" , "isActive" , "validPostMail" , "validEmail" , "lastUpdated" , "paidThrough" , "postalCode" , "firstName" , "lastName" , "newsletterType" , "lists" , "unit" , "isNewMember" , "sendEventNotices"] , "sortExpr" : "{ \"lastName\":1,\"firstName\":1}" , "collectionName" : "members"}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[{ "selectedFields" : [ "address" , "email" , "joined" , "phone" , "city" , "state" , "mmb" , "isActive" , "validPostMail" , "validEmail" , "lastUpdated" , "paidThrough" , "postalCode" , "firstName" , "lastName" , "newsletterType" , "lists" , "unit" , "isNewMember" , "sendEventNotices"] , "sortExpr" : "{ \"lastName\":1,\"firstName\":1}" , "collectionName" : "members"}]]></xml-property>
             <structure name="designerState">
                 <property name="version">1.0</property>
                 <property name="stateContentAsString">false,1000</property>
