@@ -91,10 +91,40 @@ const addressData = ( dataSetRow ) => {
 // #A0FBF9
 // #D5D5D5
 
+/**
+ * set query expression for each list type
+ * @param o: object containing listType value
+ *    listType values
+ *       all: all active members and volunteers (just isActive:true)
+ *       board: members serving on the board
+ *       sales: book sales volunteers
+ *       store: book store volunteers
+ *       lumicon: lumicon sale volunteers
+ *       new: new members
+ * */ 
+
 const dynamicQuery = ( o ) => {
     let queryExpression = { isActive: true };
-    if(o.listType !== undefined && o.listType === "board"){
-        queryExpression["lists"]={"$regex":"board","$options":"i"}
+    if(o.listType !== undefined ){
+        switch(o.listType) {
+            case "all":
+                break;
+            case "board":
+                queryExpression["lists"]={"$regex":"board","$options":"i"};
+                break;
+            case "sale":
+                queryExpression["lists"]={"$regex":"sale","$options":"i"};
+                break;
+            case "store":
+                queryExpression["lists"]={"$regex":"store","$options":"i"};
+                break;
+            case "lumicon":
+                queryExpression["lists"]={"$regex":"lumicon","$options":"i"};
+                break;
+            case "new":
+                queryExpression["isNewMember"]=true;
+                break;
+        }
     }
     return JSON.stringify( queryExpression );
 }
